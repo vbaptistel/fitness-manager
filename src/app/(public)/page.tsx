@@ -1,6 +1,6 @@
+import { Activity, ArrowRight, Building2, ChevronDown, Dumbbell, Eye, Monitor, Ruler, ScanLine, TreePine } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ChevronDown, ScanLine, Activity, Ruler, Eye, Dumbbell, Building2, TreePine, Monitor } from "lucide-react";
 
 export default function Home() {
     return (
@@ -435,7 +435,7 @@ export default function Home() {
                             <p className="text-xl text-gray-400 mb-8 max-w-md">
                                 Dúvidas comuns sobre como funciona a consultoria, pagamentos e suporte.
                             </p>
-                            <Link href="#contato" className="inline-flex items-center gap-2 rounded-full bg-brand-primary px-6 py-3 text-sm font-semibold text-white hover:bg-blue-500 transition-colors">
+                            <Link href="https://wa.me/5519971001900" target="__blank" className="inline-flex items-center gap-2 rounded-full bg-brand-primary px-6 py-3 text-sm font-semibold text-white hover:bg-blue-500 transition-colors">
                                 Fale Comigo <ArrowRight className="h-4 w-4" />
                             </Link>
                         </div>
@@ -483,47 +483,8 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* CTA FINAL */}
-            <section className="bg-neutral-900 py-16 sm:py-24 text-center">
-                <div className="container-custom">
-                    <h2 className="mb-4 text-3xl sm:text-4xl md:text-6xl font-bold uppercase leading-tight">
-                        Desbloqueie seu <span className="text-brand-primary">potencial</span>
-                    </h2>
-                    <p className="mx-auto mb-10 max-w-lg text-gray-400 text-lg">
-                        Não espere a segunda-feira perfeita. Comece hoje com um plano feito sob medida para você.
-                    </p>
-                    <Link
-                        href="https://wa.me/5511999999999"
-                        className="inline-flex items-center justify-center rounded-full bg-brand-primary px-10 py-5 text-lg font-bold text-white transition-all hover:scale-105 hover:bg-blue-500 hover:shadow-lg hover:shadow-brand-primary/30"
-                    >
-                        COMEÇAR AGORA <ArrowRight className="ml-2 h-6 w-6" />
-                    </Link>
-                </div>
-            </section>
-
             {/* FOOTER */}
-            <footer className="bg-black py-12 sm:py-20 border-t border-white/10">
-                <div className="container-custom flex flex-col items-center justify-between gap-8 sm:gap-12 md:flex-row">
-                    <div>
-                        <h2 className="text-2xl sm:text-4xl font-bold uppercase tracking-tighter text-white text-center md:text-left">Flávio Di Giovanni</h2>
-                        <p className="mt-2 text-sm text-gray-500 max-w-xs">
-                            Transformando vidas através do movimento inteligente e da ciência aplicada.
-                        </p>
-                    </div>
 
-                    <div className="flex flex-col md:items-end gap-4">
-                        <div className="flex gap-8 text-sm font-medium text-gray-400">
-                            <Link href="#sobre" className="hover:text-white transition-colors">Sobre</Link>
-                            <Link href="#planos" className="hover:text-white transition-colors">Planos</Link>
-                            <Link href="#faq" className="hover:text-white transition-colors">FAQ</Link>
-                            <a href="https://www.instagram.com" className="hover:text-white transition-colors">Instagram</a>
-                        </div>
-                        <div className="text-xs text-gray-600">
-                            © {new Date().getFullYear()} Todos os direitos reservados.
-                        </div>
-                    </div>
-                </div>
-            </footer>
         </main>
     );
 }

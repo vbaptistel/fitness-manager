@@ -23,7 +23,7 @@ export default function ClientDetailsPage() {
     const params = useParams();
     const router = useRouter();
     const id = params?.id as string;
-    
+
     const [client, setClient] = useState<Profile | null>(null);
     const [loading, setLoading] = useState(true);
 
@@ -31,13 +31,13 @@ export default function ClientDetailsPage() {
 
     const fetchClientDetails = async () => {
         if (!id) return;
-        
+
         const { data, error } = await supabase
             .from('profiles')
             .select('*')
             .eq('id', id)
             .single();
-        
+
         if (error) {
             console.error('Error fetching client details:', error);
             // router.push('/admin/clients'); // Optional redirect on error
@@ -54,7 +54,7 @@ export default function ClientDetailsPage() {
     const handleToggleStatus = async () => {
         if (!client) return;
         const newStatus = client.status === 'active' ? 'inactive' : 'active';
-        
+
         const { error } = await supabase
             .from('profiles')
             .update({ status: newStatus })
@@ -74,7 +74,7 @@ export default function ClientDetailsPage() {
 
     return (
         <div className="space-y-6">
-            <button 
+            <button
                 onClick={() => router.back()}
                 className="flex items-center text-gray-400 hover:text-white transition-colors"
             >
@@ -87,24 +87,22 @@ export default function ClientDetailsPage() {
                 <div>
                     <div className="flex items-center gap-3">
                         <h1 className="text-3xl font-bold text-white">{client.full_name || 'Aluno sem nome'}</h1>
-                        <span className={`px-2 py-1 rounded-full text-xs font-medium border ${
-                            client.status === 'active' 
-                                ? 'bg-green-500/10 text-green-500 border-green-500/20' 
+                        <span className={`px-2 py-1 rounded-full text-xs font-medium border ${client.status === 'active'
+                                ? 'bg-green-500/10 text-green-500 border-green-500/20'
                                 : 'bg-red-500/10 text-red-500 border-red-500/20'
-                        }`}>
+                            }`}>
                             {client.status === 'active' ? 'Ativo' : 'Inativo'}
                         </span>
                     </div>
                     <p className="text-gray-400 text-sm mt-1">Cadastrado em {new Date(client.created_at).toLocaleDateString('pt-BR')}</p>
                 </div>
                 <div className="flex gap-2">
-                    <button 
+                    <button
                         onClick={handleToggleStatus}
-                        className={`px-4 py-2 rounded-md font-semibold transition-colors flex items-center border ${
-                            client.status === 'active' 
-                                ? 'border-red-500 text-red-500 hover:bg-red-500/10' 
+                        className={`px-4 py-2 rounded-md font-semibold transition-colors flex items-center border ${client.status === 'active'
+                                ? 'border-red-500 text-red-500 hover:bg-red-500/10'
                                 : 'border-green-500 text-green-500 hover:bg-green-500/10'
-                        }`}
+                            }`}
                     >
                         {client.status === 'active' ? 'Desativar Aluno' : 'Ativar Aluno'}
                     </button>
@@ -162,7 +160,7 @@ export default function ClientDetailsPage() {
                 <div className="bg-gray-900 p-6 rounded-lg border border-gray-800">
                     <h3 className="text-lg font-medium text-white mb-4 border-b border-gray-800 pb-2">Acesso Rápido</h3>
                     <div className="space-y-3">
-                        <Link 
+                        <Link
                             href={`/admin/clients/${id}/history`}
                             className="flex items-center justify-between p-3 rounded bg-gray-950 hover:bg-gray-800 transition-colors border border-gray-800 group"
                         >
@@ -171,7 +169,7 @@ export default function ClientDetailsPage() {
                                 Ver Histórico/Evolução
                             </span>
                         </Link>
-                        <Link 
+                        <Link
                             href={`/admin/clients/${id}/workouts`}
                             className="flex items-center justify-between p-3 rounded bg-gray-950 hover:bg-gray-800 transition-colors border border-gray-800 group"
                         >
@@ -180,7 +178,7 @@ export default function ClientDetailsPage() {
                                 Ver Treinos
                             </span>
                         </Link>
-                        <Link 
+                        <Link
                             href={`/admin/clients/${id}/schedule`}
                             className="flex items-center justify-between p-3 rounded bg-gray-950 hover:bg-gray-800 transition-colors border border-gray-800 group"
                         >
@@ -192,7 +190,7 @@ export default function ClientDetailsPage() {
                     </div>
                 </div>
             </div>
-            
+
             {/* Recent Activity or Notes could go here */}
         </div>
     );

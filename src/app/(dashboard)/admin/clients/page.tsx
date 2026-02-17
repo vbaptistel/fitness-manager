@@ -25,7 +25,7 @@ export default function AdminClientsPage() {
                 .from('profiles')
                 .select('*')
                 .order('full_name', { ascending: true });
-            
+
             if (error) {
                 console.error('Error fetching clients:', error);
             } else {
@@ -37,7 +37,7 @@ export default function AdminClientsPage() {
         fetchClients();
     }, []);
 
-    const filteredClients = clients.filter(client => 
+    const filteredClients = clients.filter(client =>
         client.full_name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
         client.phone?.includes(searchTerm)
     );
@@ -58,9 +58,9 @@ export default function AdminClientsPage() {
 
             {/* Filters/Search */}
             <div className="flex gap-4">
-                <input 
-                    type="text" 
-                    placeholder="Buscar aluno por nome ou telefone..." 
+                <input
+                    type="text"
+                    placeholder="Buscar aluno por nome ou telefone..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     className="bg-gray-900 border border-gray-800 text-white rounded-md px-4 py-2 w-full max-w-md focus:ring-2 focus:ring-brand-500 outline-none"
@@ -101,7 +101,7 @@ export default function AdminClientsPage() {
                                         {new Date(client.created_at).toLocaleDateString('pt-BR')}
                                     </td>
                                     <td className="px-6 py-4">
-                                        <Link 
+                                        <Link
                                             href={`/admin/clients/${client.id}`}
                                             className="text-brand-500 hover:text-brand-400 hover:underline font-medium"
                                         >
