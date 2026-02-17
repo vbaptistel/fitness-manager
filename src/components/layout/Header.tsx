@@ -20,9 +20,9 @@ export function Header() {
     const navLinks = [
         { name: "Sobre", href: "#sobre" },
         { name: "Tecnologia", href: "#tecnologia" },
-        { name: "Programas", href: "#planos" },
-        { name: "Depoimentos", href: "#testimonials" },
+        { name: "Protocolo", href: "#protocolo" },
         { name: "Planos", href: "#planos" },
+        { name: "Depoimentos", href: "#testimonials" },
     ];
 
     return (

@@ -1,4 +1,4 @@
-import { Activity, ArrowRight, Building2, ChevronDown, Dumbbell, Eye, Monitor, Ruler, ScanLine, TreePine } from "lucide-react";
+import { Activity, ArrowRight, Building2, ChevronDown, Dumbbell, Eye, FlaskConical, Monitor, Ruler, ScanLine, Search, TreePine, Zap } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -67,7 +67,7 @@ export default function Home() {
                                 alt="Flávio Di Giovanni"
                                 width={600}
                                 height={750}
-                                className="object-contain drop-shadow-[0_0_50px_rgba(0,0,0,0.3)] w-[75%] max-w-[320px] sm:max-w-[400px] lg:w-full lg:max-w-none"
+                                className="object-contain drop-shadow-[0_0_50px_rgba(0,0,0,0.3)] w-[75%] max-w-[320px] sm:max-w-100 lg:w-full lg:max-w-none"
                                 priority
                             />
                         </div>
@@ -81,7 +81,7 @@ export default function Home() {
                     {/* Top row: image + intro text */}
                     <div className="grid gap-10 sm:gap-16 lg:grid-cols-2 lg:items-center">
                         <div className="relative flex justify-center lg:justify-start">
-                            <div className="relative aspect-[3/4] w-full max-w-xs sm:max-w-md overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 group">
+                            <div className="relative aspect-3/4 w-full max-w-xs sm:max-w-md overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 group">
                                 <div className="absolute inset-0 bg-brand-primary/20 mix-blend-overlay group-hover:opacity-0 transition-opacity" />
                                 <div className="absolute -inset-4 border-2 border-brand-primary/30 z-20 translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform" />
                                 <Image
@@ -220,7 +220,7 @@ export default function Home() {
                         <div className="relative flex flex-col gap-6">
                             {/* Main scan image */}
                             <div className="relative overflow-hidden rounded-3xl border border-white/10 group">
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10" />
+                                <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent z-10" />
                                 <Image
                                     src="/bodygee-scan.webp"
                                     alt="Escaneamento corporal 3D com Bodygee"
@@ -243,7 +243,7 @@ export default function Home() {
                                         fill
                                         className="object-cover transition-transform duration-500 group-hover:scale-110"
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                                    <div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent" />
                                     <div className="absolute bottom-2 left-2 right-2 z-10">
                                         <p className="text-[10px] font-bold uppercase tracking-wider text-white">App Cliente</p>
                                     </div>
@@ -255,7 +255,7 @@ export default function Home() {
                                         fill
                                         className="object-cover transition-transform duration-500 group-hover:scale-110"
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                                    <div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent" />
                                     <div className="absolute bottom-2 left-2 right-2 z-10">
                                         <p className="text-[10px] font-bold uppercase tracking-wider text-white">Avatar 3D</p>
                                     </div>
@@ -267,7 +267,7 @@ export default function Home() {
                                         fill
                                         className="object-cover transition-transform duration-500 group-hover:scale-110"
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                                    <div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent" />
                                     <div className="absolute bottom-2 left-2 right-2 z-10">
                                         <p className="text-[10px] font-bold uppercase tracking-wider text-white">Dashboard</p>
                                     </div>
@@ -306,6 +306,151 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* PROTOCOLO SECTION */}
+            <section id="protocolo" className="bg-black py-16 sm:py-32 relative overflow-hidden">
+                {/* Background decorations */}
+                <div className="absolute top-0 left-0 w-125 h-125 bg-brand-primary/5 blur-[150px] rounded-full -translate-y-1/2 -translate-x-1/2" />
+                <div className="absolute bottom-0 right-0 w-100 h-100 bg-brand-primary/5 blur-[120px] rounded-full translate-y-1/2 translate-x-1/2" />
+
+                <div className="container-custom relative z-10">
+                    {/* Header */}
+                    <div className="text-center mb-12 sm:mb-20">
+                        <div className="mx-auto mb-6 inline-flex items-center gap-2 rounded-full border border-brand-primary/30 bg-brand-primary/10 px-4 py-1.5 text-xs sm:text-sm font-medium text-blue-400">
+                            <FlaskConical className="h-4 w-4" />
+                            PROTOCOLO EXCLUSIVO
+                        </div>
+                        <h2 className="text-3xl font-bold uppercase leading-[0.9] tracking-tighter text-white sm:text-5xl lg:text-7xl mb-4">
+                            FIRMEZA E <br />
+                            <span className="text-brand-primary">REMODELAÇÃO</span> CORPORAL
+                        </h2>
+                        <p className="mx-auto max-w-2xl text-sm sm:text-lg text-gray-400 font-light leading-relaxed">
+                            Avaliação 3D + Bioestimulação + Ativação Muscular. Nosso protocolo começa com tecnologia e estratégia.
+                        </p>
+                    </div>
+
+                    {/* Steps */}
+                    <div className="relative">
+                        {/* Vertical line connector - desktop */}
+                        <div className="absolute left-1/2 top-0 bottom-0 w-px bg-linear-to-b from-transparent via-brand-primary/30 to-transparent hidden lg:block" />
+
+                        {/* Step 1 */}
+                        <div className="relative grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-16 mb-12 sm:mb-20 items-center">
+                            <div className="lg:text-right order-2 lg:order-1">
+                                <div className="inline-flex items-center gap-2 rounded-full border border-blue-500/30 bg-blue-500/10 px-3 py-1 text-xs font-medium text-blue-400 mb-4">
+                                    1º PASSO
+                                </div>
+                                <h3 className="text-2xl sm:text-3xl font-bold uppercase tracking-tight text-white mb-4">Avaliação 3D Corporal</h3>
+                                <p className="text-sm sm:text-base text-gray-400 font-light leading-relaxed mb-6">
+                                    Realizamos o escaneamento corporal completo através da Bioimpedância 3D Bodygee, criando uma base comparativa precisa para medir seus resultados.
+                                </p>
+                                <ul className="space-y-2">
+                                    {['Composição corporal', 'Percentual de gordura', 'Massa muscular', 'Distribuição corporal', 'Estrutura postural'].map((item) => (
+                                        <li key={item} className="flex items-center gap-2 text-sm text-gray-300 lg:justify-end">
+                                            <span className="h-1.5 w-1.5 rounded-full bg-brand-primary shrink-0" />
+                                            {item}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                            <div className="order-1 lg:order-2 flex justify-center lg:justify-start">
+                                <div className="relative">
+                                    {/* Circle connector */}
+                                    <div className="flex h-20 w-20 sm:h-28 sm:w-28 items-center justify-center rounded-3xl bg-linear-to-br from-brand-primary/20 to-brand-primary/5 border border-brand-primary/20">
+                                        <Search className="h-8 w-8 sm:h-12 sm:w-12 text-brand-primary" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Step 2 */}
+                        <div className="relative grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-16 mb-12 sm:mb-20 items-center">
+                            <div className="flex justify-center lg:justify-end">
+                                <div className="relative">
+                                    <div className="flex h-20 w-20 sm:h-28 sm:w-28 items-center justify-center rounded-3xl bg-linear-to-br from-brand-primary/20 to-brand-primary/5 border border-brand-primary/20">
+                                        <FlaskConical className="h-8 w-8 sm:h-12 sm:w-12 text-brand-primary" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div className="inline-flex items-center gap-2 rounded-full border border-blue-500/30 bg-blue-500/10 px-3 py-1 text-xs font-medium text-blue-400 mb-4">
+                                    2º PASSO
+                                </div>
+                                <h3 className="text-2xl sm:text-3xl font-bold uppercase tracking-tight text-white mb-4">Bioestimulação de Colágeno</h3>
+                                <p className="text-sm sm:text-base text-gray-400 font-light leading-relaxed">
+                                    Aplicação do Radiesse por profissional habilitado, estimulando a produção natural de colágeno e melhorando a firmeza da pele.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Step 3 */}
+                        <div className="relative grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-16 mb-12 sm:mb-20 items-center">
+                            <div className="lg:text-right order-2 lg:order-1">
+                                <div className="inline-flex items-center gap-2 rounded-full border border-blue-500/30 bg-blue-500/10 px-3 py-1 text-xs font-medium text-blue-400 mb-4">
+                                    3º PASSO
+                                </div>
+                                <h3 className="text-2xl sm:text-3xl font-bold uppercase tracking-tight text-white mb-4">Ativação Muscular Profunda</h3>
+                                <p className="text-sm sm:text-base text-gray-400 font-light leading-relaxed mb-6">
+                                    Após o intervalo seguro, iniciamos as sessões de Eletroestimulação Muscular da Onnafit, conduzidas por Educador Físico.
+                                </p>
+                                <ul className="space-y-2">
+                                    {['Tonificação muscular', 'Aceleração metabólica', 'Sustentação tecidual', 'Remodelação corporal'].map((item) => (
+                                        <li key={item} className="flex items-center gap-2 text-sm text-gray-300 lg:justify-end">
+                                            <span className="h-1.5 w-1.5 rounded-full bg-brand-accent shrink-0" />
+                                            {item}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                            <div className="order-1 lg:order-2 flex justify-center lg:justify-start">
+                                <div className="relative">
+                                    <div className="flex h-20 w-20 sm:h-28 sm:w-28 items-center justify-center rounded-3xl bg-linear-to-br from-brand-accent/20 to-brand-accent/5 border border-brand-accent/20">
+                                        <Zap className="h-8 w-8 sm:h-12 sm:w-12 text-brand-accent" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Step 4 */}
+                        <div className="relative grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-16 items-center">
+                            <div className="flex justify-center lg:justify-end">
+                                <div className="relative">
+                                    <div className="flex h-20 w-20 sm:h-28 sm:w-28 items-center justify-center rounded-3xl bg-linear-to-br from-brand-primary/20 to-brand-primary/5 border border-brand-primary/20">
+                                        <Activity className="h-8 w-8 sm:h-12 sm:w-12 text-brand-primary" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div className="inline-flex items-center gap-2 rounded-full border border-blue-500/30 bg-blue-500/10 px-3 py-1 text-xs font-medium text-blue-400 mb-4">
+                                    4º PASSO
+                                </div>
+                                <h3 className="text-2xl sm:text-3xl font-bold uppercase tracking-tight text-white mb-4">Reavaliação 3D</h3>
+                                <p className="text-sm sm:text-base text-gray-400 font-light leading-relaxed mb-6">
+                                    Ao final da última sessão, realizamos um novo escaneamento corporal 3D para comparar a evolução completa.
+                                </p>
+                                <div className="grid grid-cols-2 gap-3">
+                                    {['Antes x Depois', 'Evolução corporal', 'Mudanças estruturais', 'Impacto do protocolo'].map((item) => (
+                                        <div key={item} className="rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-xs sm:text-sm text-gray-300 text-center">
+                                            {item}
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Bottom CTA */}
+                    <div className="mt-16 sm:mt-24 text-center">
+                        <p className="text-sm sm:text-base text-gray-500 uppercase tracking-widest mb-6">Resultado mensurável, visual e objetivo</p>
+                        <Link
+                            href="https://wa.me/5511999999999"
+                            className="group inline-flex items-center justify-center rounded-full bg-brand-primary px-8 py-4 text-sm sm:text-base font-bold uppercase tracking-widest text-white transition-all hover:bg-blue-500 hover:scale-105 hover:shadow-lg hover:shadow-brand-primary/30"
+                        >
+                            QUERO O PROTOCOLO <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                        </Link>
                     </div>
                 </div>
             </section>
